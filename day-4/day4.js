@@ -1,7 +1,7 @@
 const fs = require('fs');
 
 /** part 1 */
-function hasFullOverlap(array) {
+hasFullOverlap = (array) => {
     const start1 = +array[0];
     const end1 = +array[1];
     const start2 = +array[2];
@@ -10,7 +10,7 @@ function hasFullOverlap(array) {
 }
 
 /** part 2 */
-function hasSomeOverlap(array) {
+hasSomeOverlap = (array) => {
     const start1 = +array[0];
     const end1 = +array[1];
     const start2 = +array[2];

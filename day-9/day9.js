@@ -27,9 +27,11 @@ fs.readFile('input.txt', 'utf8', (err, data) => {
 
     /** part 1 */
 
-    let numberVisible = 0
+    /**
 
-    input.forEach((treesInRow, columnIndex) => {
+     let numberVisible = 0
+
+     input.forEach((treesInRow, columnIndex) => {
 
         treesInRow.forEach((tree, rowIndex) => {
             if (isUniqueMax(tree, treesInRow.slice(0, rowIndex + 1)) ||
@@ -40,8 +42,10 @@ fs.readFile('input.txt', 'utf8', (err, data) => {
             }
         })
     })
+     console.log(numberVisible)
 
-    console.log(numberVisible)
+     */
+
 
     /** part 2 */
 
@@ -51,10 +55,12 @@ fs.readFile('input.txt', 'utf8', (err, data) => {
 
         treesInRow.forEach((tree, rowIndex) => {
 
-            if (!(columnIndex === 0 ||
+            if (columnIndex === 0 ||
                 rowIndex === 0 ||
                 columnIndex === input.length - 1 ||
-                rowIndex === treesInRow.length - 1)) {
+                rowIndex === treesInRow.length - 1) {
+                visiblityFromTrees.push(0);
+            } else {
                 const up = getNumberOfVisible(tree, transposedInput[rowIndex].slice(0, columnIndex).reverse())
                 const down = getNumberOfVisible(tree, transposedInput[rowIndex].slice(columnIndex + 1))
                 const left = getNumberOfVisible(tree, treesInRow.slice(0, rowIndex).reverse())
